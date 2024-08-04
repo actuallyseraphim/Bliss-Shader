@@ -246,7 +246,7 @@ vec4 GetVolumetricFog(
 
 	// float phsething = phaseEND(CenterdotV, 0.35) + phaseEND(CenterdotV, 0.85) ;
 
-	float skyPhase = 0.5 + pow(clamp(normalize(wpos).y*0.5+0.5,0.0,1.0),4.0)*5.0;
+	float skyPhase = 0.5 + pow(clamp(normalize(wpos).y*0.5+0.5,0.0,1.0),4.0)*1.0;
 
 	vec3 hazeColor = normalize(gl_Fog.color.rgb) * 0.1;
     
@@ -334,7 +334,7 @@ vec4 GetVolumetricFog(
 				color += LPV_FOG_ILLUMINATION(progressW-cameraPosition, dd, dL) * TorchBrightness_autoAdjust * absorbance;
 			#endif
 	}
-	return vec4(color*0.7, absorbance);
+	return vec4(color*0.1, absorbance);
 }
 
 float GetCloudShadow(vec3 WorldPos, vec3 LightPos){
