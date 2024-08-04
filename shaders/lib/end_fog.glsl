@@ -334,7 +334,7 @@ vec4 GetVolumetricFog(
 				color += LPV_FOG_ILLUMINATION(progressW-cameraPosition, dd, dL) * TorchBrightness_autoAdjust * absorbance;
 			#endif
 	}
-	return vec4(color, absorbance);
+	return vec4(color*0.7, absorbance);
 }
 
 float GetCloudShadow(vec3 WorldPos, vec3 LightPos){
